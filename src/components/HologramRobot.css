@@ -1,0 +1,90 @@
+.hologram-root {
+  position: absolute;
+  right: 0;
+  top: 8vh;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Sliding + floating animation */
+.hologram-stage {
+  position: relative;
+  opacity: 0;
+  transform: translateX(120px);
+  animation: slideIn 1s cubic-bezier(.2,.9,.3,1) var(--slide-delay) forwards,
+             floatY 6s ease-in-out infinite;
+}
+
+/* Robot Image */
+.hologram-img {
+  width: 100%;
+  filter: drop-shadow(0 20px 40px rgba(0, 255, 255, 0.25))
+          drop-shadow(0 0 25px rgba(0, 200, 255, 0.35))
+          brightness(1.1)
+          saturate(1.2);
+}
+
+/* Hologram glow overlay */
+.hologram-glow {
+  position: absolute;
+  inset: -6%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 255, 255, 0.18),
+    rgba(0, 150, 255, 0.08)
+  );
+  filter: blur(20px);
+  border-radius: 20px;
+  z-index: -1;
+}
+
+/* Projector base */
+.hologram-base {
+  position: absolute;
+  left: 50%;
+  bottom: -28px;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 38px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 200, 255, 0.25),
+    rgba(0, 100, 255, 0.05)
+  );
+  filter: blur(10px);
+  opacity: 0.85;
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+  0% {
+    transform: translateX(120px);
+    opacity: 0;
+    filter: blur(6px);
+  }
+  60% {
+    transform: translateX(-10px);
+    opacity: 1;
+    filter: blur(2px);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* Floating effect */
+@keyframes floatY {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Hide robot on very small screens */
+@media (max-width: 720px) {
+  .hologram-root {
+    display: none;
+  }
+}

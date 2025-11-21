@@ -1,0 +1,43 @@
+.landing {
+  width: 100%;
+  padding-top: 80px;
+  padding-bottom: 60px;
+  display: flex;
+  justify-content: center;
+  background: #fff;
+}
+
+.landing-container {
+  max-width: 900px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* Tagline (same style as reference) */
+.landing-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 48px;
+  color: #0f0f0f;
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+
+.landing-title span {
+  color: #14b8a6; /* teal highlight like reference */
+}
+
+/* Sub-points (reference uses clean sans-serif) */
+.landing-subtext {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.highlight {
+  font-weight: 600;
+  color: #14b8a6;
+}
+/* Responsive adjustments */

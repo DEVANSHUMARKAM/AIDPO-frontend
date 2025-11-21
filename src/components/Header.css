@@ -1,0 +1,47 @@
+.header {
+  width: 100%;
+  background-color: white;
+  /* border-bottom: 1px solid #e5e5e5; */
+}
+
+.header-inner {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left-section .logo {
+  height: 30%;
+  width: 220px;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.right-section a {
+  color: #111;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.github-btn {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid #cfcfcf;
+  background: white;
+  cursor: pointer;
+}
+
+.demo-btn {
+  padding: 8px 18px;
+  background-color: #111;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
