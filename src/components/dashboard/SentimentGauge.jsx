@@ -1,11 +1,10 @@
+// src/components/dashboard/SentimentGauge.jsx
 import React from "react";
 import { Doughnut } from "react-chartjs-2";
 
 export default function SentimentGauge() {
-  // Demo sentiment score (0–5 scale)
   const score = 4.85;
   const maxScore = 5;
-
   const percentage = (score / maxScore) * 100;
 
   const data = {
@@ -14,16 +13,15 @@ export default function SentimentGauge() {
       {
         data: [percentage, 100 - percentage],
         backgroundColor: [
-          // Gradient: red → yellow → green (approximation)
           percentage < 50
-            ? "#FF6B6B" // red-ish
+            ? "#FF6B6B" 
             : percentage < 75
-            ? "#FFD93D" // yellow-ish
-            : "#00E676", // green
-          "rgba(0,0,0,0.08)", // background remainder
+            ? "#FFD93D"
+            : "#00E676",
+          "rgba(0,0,0,0.08)",
         ],
         borderWidth: 0,
-        cutout: "75%", // makes gauge shape
+        cutout: "75%",
       },
     ],
   };
@@ -35,8 +33,8 @@ export default function SentimentGauge() {
       legend: { display: false },
       tooltip: { enabled: false },
     },
-    rotation: -90 * (Math.PI / 180), // start at the top
-    circumference: 180 * (Math.PI / 180), // half circle gauge
+    rotation: -Math.PI / 2,
+    circumference: Math.PI, // half circle
   };
 
   return (

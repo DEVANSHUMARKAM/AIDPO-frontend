@@ -1,6 +1,7 @@
 import "./LandingPage.css";
 import HologramRobot from "./HologramRobot";
 
+
 export default function LandingPage() {
   return (
     <section className="landing">

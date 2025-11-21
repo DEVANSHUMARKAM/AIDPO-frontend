@@ -1,38 +1,40 @@
+// src/chartjs-setup.js
+
 import {
   Chart as ChartJS,
   ArcElement,
   Tooltip,
   Legend,
-  LinearScale,
   CategoryScale,
-  BarElement,
+  LinearScale,
   PointElement,
   LineElement,
-  DoughnutController,
+  BarElement,
+  DoughnutController
 } from "chart.js";
 
 import {
   ChoroplethController,
   GeoFeature,
   ProjectionScale,
-  ColorScale      // <-- REQUIRED
+  ColorScale
 } from "chartjs-chart-geo";
 
-// Register all chart elements used
+// Register ALL chart elements only once
 ChartJS.register(
   ArcElement,
   Tooltip,
   Legend,
-  LinearScale,
   CategoryScale,
-  BarElement,
+  LinearScale,
   PointElement,
   LineElement,
+  BarElement,
   DoughnutController,
 
-  // Choropleth map support
+  // Geo charts
   ChoroplethController,
   GeoFeature,
   ProjectionScale,
-  ColorScale        // <-- THIS WAS MISSING
+  ColorScale
 );
