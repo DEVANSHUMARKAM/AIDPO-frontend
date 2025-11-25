@@ -1,15 +1,16 @@
 import { useState } from "react";
 import "./AuthModal.css";
+import { useNavigate } from "react-router-dom";
 
 export default function AuthModal({ open, onClose, onAuthSuccess }) {
   const [isLogin, setIsLogin] = useState(true);
-
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const [message, setMessage] = useState("");
+
+  const navigate = useNavigate();      // ✅ THIS WAS MISSING
 
   if (!open) return null;
 
@@ -39,9 +40,12 @@ export default function AuthModal({ open, onClose, onAuthSuccess }) {
         return;
       }
 
+      // LOGIN SUCCESS
       if (isLogin) {
         localStorage.setItem("token", data.token);
         onAuthSuccess(data);
+
+        navigate("/dashboard");   // ✅ Redirect works now
         onClose();
       } else {
         setMessage("Signup successful! Please login.");
@@ -55,12 +59,13 @@ export default function AuthModal({ open, onClose, onAuthSuccess }) {
   return (
     <div className="modal-overlay">
       <div className="auth-box">
-        <button className="close-btn" onClick={onClose}>×</button>
+        <button className="close-btn" onClick={onClose}>
+          ×
+        </button>
 
         <h2>{isLogin ? "Login" : "Sign Up"}</h2>
 
         <form onSubmit={handleSubmit}>
-
           {!isLogin && (
             <>
               <input

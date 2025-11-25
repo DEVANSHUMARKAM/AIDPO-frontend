@@ -1,9 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./chartjs-setup";
+
 import Header from "./components/Header";
 import LandingPage from "./components/LandingPage";
 import KpiOverviewSection from "./components/dashboard/KpiOverviewSection";
 import IndiaMapSection from "./components/india-map/IndiaMapSection";
+import DashboardPage from "./components/dashboard/DashboardPage";
 import Footer from "./components/Footer";
 
 export default function App() {
@@ -12,7 +14,7 @@ export default function App() {
       <Header />
 
       <Routes>
-        {/* Landing Page */}
+        {/* Home Page */}
         <Route
           path="/"
           element={
@@ -25,7 +27,10 @@ export default function App() {
           }
         />
 
-        {/* Standalone India Map (optional) */}
+        {/* User Dashboard */}
+        <Route path="/dashboard" element={<DashboardPage />} />
+
+        {/* Standalone India Map Page */}
         <Route
           path="/india-map"
           element={

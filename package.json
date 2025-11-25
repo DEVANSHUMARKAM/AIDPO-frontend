@@ -12,6 +12,7 @@
   "dependencies": {
     "chart.js": "^4.5.1",
     "chartjs-chart-geo": "^4.3.6",
+    "jwt-decode": "^4.0.0",
     "lottie-react": "^2.4.1",
     "react": "^19.2.0",
     "react-chartjs-2": "^5.3.1",
